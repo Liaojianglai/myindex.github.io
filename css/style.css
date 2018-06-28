@@ -1,0 +1,177 @@
+/* ================================= 
+全局设置
+==================================== */
+*{
+    text-decoration: none; /*去掉所有超链接的下划线*/
+    list-style: none; /*去掉所有前面的小圆点*/
+    box-sizing: border-box; /*边缘模型*/
+}
+
+/* ================================= 
+移动优先CSS规则
+==================================== */
+.logo {  /*去掉默认外边距*/
+    margin: 0; /*外边距:0*/
+  /*  padding: 1em; 控制点击区域 */  
+   width: 100px;
+	height: 60px;
+} 
+/*.navlist li {  只改变目录位置居中
+    text-align: center;
+}*/
+.header {
+	position: fixed;
+    width: 100%;
+    text-align: center;/*文本对齐居中*/
+    background-color:skyblue;/*设置header中的背景色*/
+
+}
+
+/*inline 线级元素   可以把超链接变更成线级
+block 块级元素  可以把超链接变更成块级*/
+a {
+   display: block; 
+    color: aliceblue; /*改变超链接的默认点击颜色*/
+}
+.logo a {
+    padding: 1em  0; /*内边距：上下1em，左右0*/
+}
+.navlist li a{
+    padding: .5em  0;/*内边距：上下0.5em，左右0*/
+}
+.navlist li a:hover{  /*伪class，pseudo class*：当鼠标移动到元素上时**/
+    background-color: crimson;
+    transition: 0.5s;   /*鼠标移动是元素上时 颜色的延迟*/
+}
+
+.nav:hover{
+		
+	background-color: crimson;
+	transition: 0.5s;
+	
+	 border-radius: 5px;/*边框圆角*/
+}
+footer{   /*页脚属性*/
+    text-align: center; 
+    padding: 1em 0;
+    background-color: skyblue;
+    color: aliceblue;
+    
+}
+.wrap{
+    /*min-height: calc(100vh - 54px);  /*计算css的高*/
+	margin: 0;
+   
+}
+.banner{  /*设置.banner样式*/
+    background: url("../images/lovers.jpeg");/*设置照片背景*/
+    background-size: cover; /*图片自适应屏幕大小*/
+    background-position: center center;/*上下左右都以中间为准*/
+    
+    background-color: bisque;
+    text-align: center;
+    height: 250px;
+    display: flex;
+    color: aqua;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 1px 1px 1px black;
+    
+}
+.logo{
+	background: url("../images/logo.png");
+	background-size: cover;
+	background-position: center center;
+	color: skyblue;
+	
+	/*<span style="color:#FFFFFF;opacity: 0.0;">'+value+'</span>; */
+	
+}
+h1,h2{   /*设置h1,h2的简距*/
+    margin: 0;
+    /*padding: .5em 0;*/
+}
+h2{
+    padding-top: 1em;
+}
+.container{
+    width: 100%;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.col{
+    padding: 5em ;
+  
+    color: white;
+}
+
+
+.col p{
+    line-height: 1.4;
+}
+.col h1 {
+    text-align: center;
+    
+}
+.two{
+	background-color: darkblue;
+	
+text-align: center;
+	
+}
+
+
+.wz a{
+	color: aqua;
+}
+
+/*=================================
+媒体查询：500X宽==>相当于 if else
+==================================*/
+@media (min-width:600px){
+   .header{
+        display: flex;    /*浮动*/
+        justify-content:space-around;  /*目录排列样式*/
+        align-items: center;   /*相同---位置*/
+        
+    }
+    .navlist{
+        display: flex;  /*把.navlist设置成弹性*/
+        
+        
+        
+    }
+    .navlist li a{
+    padding: 1em 2em;   /*目录简距*/
+        border-radius: 5px;/*边框圆角*/
+       
+    }
+    
+    .banner{  /*把宽度设置成500px*/
+        height: 500px;
+    }
+	 .container{
+        width: 90%;
+      /*  display: flex;*/
+        padding: 3em 0;
+    }
+    
+    .col {
+        flex-basis: 20%;
+        flex-grow: 1; 
+        margin:0  3em;
+        border-radius: 10px;
+    }
+    
+    .col:hover{
+        box-shadow: 1px 1px 1px rgba(0,0,0);
+        transition: .3s;
+        cursor:  default;
+    }
+	
+	.nav{
+	color:transparent;
+}
+}
+
